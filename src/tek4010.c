@@ -187,9 +187,15 @@ void ginSend(int ch)
 void tek4010_clicked(int x, int y)
 {
         if (DEBUG) printf("Clicked, mode = %d\n", mode);
+
         if (mode == 60) {
                 tube_x0 = x;
                 tube_y0 = y;
+
+                ginSend(' ');
+                mode = 0;
+                todo = 0;
+                isGinMode = 0;
         }
 }
 
